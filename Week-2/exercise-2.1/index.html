@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Information Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&family=Roboto:wght@100;300;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/index.css" />
+    <link rel="stylesheet" href="style/form.css" />
+    <link rel="stylesheet" href="style/artical.css" />
+  </head>
+  <body>
+    <header>
+      <h1>What is Internet?</h1>
+      <p>
+        The Internet is a global network of billions of computers and other
+        electronic devices.
+      </p>
+      <a
+        href="https://edu.gcfglobal.org/en/internetbasics/what-is-the-internet/1/"
+        >Go to the article</a
+      >
+    </header>
+    <article>
+      <p>
+        The Internet, sometimes called simply "the Net," is a worldwide system
+        of computer networks -- a network of networks in which users at any one
+        computer can, if they have permission, get information from any other
+        computer (and sometimes talk directly to users at other computers).
+      </p>
+      <div>
+        <img
+          src="https://cdn.britannica.com/88/129488-131-09AB5E83/Internet-blue-screen-blog-society-history-media-2009.jpg"
+          alt="web thumbnail image"
+        />
+      </div>
+      <p>
+        The original aim was to create a network that would allow users of a
+        research computer at one university to "talk to" research computers at
+        other universities. A side benefit of ARPANet's design was that, because
+        messages could be routed or rerouted in more than one direction.
+      </p>
+      <p>
+        Physically, the Internet uses a portion of the total resources of the
+        currently existing public telecommunication networks. Technically, what
+        distinguishes the Internet is its use of a set of protocols called
+        Transmission Control Protocol/Internet Protocol (TCP/IP). The protocols
+        are also responsible for translating the alphabetic text of a message
+        into electronic signals that can be transmitted over the Internet, and
+        then back again into legible, alphabetic text.
+      </p>
+      <p>
+        The Internet can be seen as having two major components: network
+        protocols and hardware. The protocols, such as the TCP/IP suite, present
+        sets of rules that devices must follow in order to complete tasks.
+      </p>
+    </article>
+    <section>
+      <h2>Signup for more details</h2>
+      <form>
+        <ul>
+          <!-- Title -->
+          <div class="title">
+            <div class="inline-lable">
+              <label for="Title">Title</label>
+            </div>
+            <li class="form-control-inline">
+              <input
+                type="radio"
+                name="gender"
+                id="Mr"
+                value="Mr"
+                checked
+                required
+              />
+              <label for="Mr">Mr</label>
+            </li>
+            <li class="form-control-inline">
+              <input type="radio" name="gender" id="Mrs" value="Mrs" required />
+              <label for="Mrs">Mrs</label>
+            </li>
+            <li class="form-control-inline">
+              <input
+                type="radio"
+                name="gender"
+                id="Miss"
+                value="Miss"
+                required
+              />
+              <label for="Miss">Miss</label>
+            </li>
+          </div>
+
+          <!-- First-name -->
+          <li>
+            <div class="inline-lable">
+              <label for="firstname">First name</label>
+            </div>
+            <input
+              type="text"
+              name="first-name"
+              id="first-name"
+              required
+              placeholder="Arpit"
+            />
+          </li>
+          <!-- Last-name -->
+          <li>
+            <div class="inline-lable">
+              <label for="lastname">Last name</label>
+            </div>
+            <input
+              type="text"
+              name="last-name"
+              id="last-name"
+              required
+              placeholder="Moliya"
+            />
+          </li>
+          <!-- Email -->
+          <li>
+            <div class="inline-lable">
+              <label for="email">Email</label>
+            </div>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="example@gmail.com"
+            />
+          </li>
+          <!-- phone no. -->
+          <li>
+            <div class="inline-lable">
+              <label for="phone">Phone no</label>
+            </div>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="9428489930"
+              min="10"
+              max="10"
+              required
+            />
+          </li>
+          <!-- password -->
+          <li>
+            <div class="inline-lable">
+              <label for="password">Password</label>
+            </div>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              minlength="8"
+              required
+            />
+          </li>
+          <li>
+            <div class="inline-lable">
+              <label for="confirmPassword">Confirm Password</label>
+            </div>
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              minlength="8"
+              required
+            />
+          </li>
+
+          <!-- country -->
+          <li>
+            <div class="inline-lable">
+              <label for="country">Country</label>
+            </div>
+            <select id="country" name="country" required>
+              <option value="india">India</option>
+              <option value="australia">Australia</option>
+              <option value="canada">Canada</option>
+              <option value="usa">USA</option>
+            </select>
+          </li>
+          <!-- terms and conditions checkbox -->
+          <li class="form-control-inline">
+            <input
+              type="checkbox"
+              id="termsandconditions"
+              name="termsandconditions"
+              value="selected"
+              required
+            />
+            <label for="termsandconditions">
+              I agree to
+              <a href="http://google.com/">terms and conditions</a></label
+            >
+          </li>
+          <!-- Submit button -->
+          <li>
+            <input type="submit" value="Submit" />
+          </li>
+        </ul>
+      </form>
+    </section>
+    <footer>
+      <p>made by arpit moliya</p>
+    </footer>
+  </body>
+</html>
