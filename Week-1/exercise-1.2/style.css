@@ -1,0 +1,130 @@
+body {
+  height: auto;
+  background-color: rgb(69, 69, 69);
+  font-family: "lato", sans-serif;
+  margin: 0;
+  border-top: 5px solid;
+  border-right: 5px solid;
+}
+
+img {
+  height: 150px;
+  width: 150px;
+  padding-right: 25px;
+}
+
+header {
+  display: flex;
+  padding: 25px 25px 25px 75px;
+  color: white;
+  height: 30%;
+}
+
+h2 {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+p {
+  margin: 0;
+  font-size: 13px;
+}
+
+li {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px 10px;
+  padding: 15px 0;
+  font-size: 13px;
+}
+
+li span {
+  width: 170px;
+}
+
+li:nth-child(2) {
+  background-color: rgb(240, 240, 240);
+}
+li:nth-child(4) {
+  background-color: rgb(240, 240, 240);
+}
+
+#playlist-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+  border: 1px solid black;
+  text-align: center;
+  width: fit-content;
+}
+
+#manipulate-button i {
+  margin-right: 15px;
+}
+
+.Center {
+  padding-left: 25px;
+  background-color: white;
+  height: 400px;
+}
+
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgb(240, 240, 240);
+  padding: 15px;
+  height: 585px;
+  width: 30px;
+  margin: -615px 0px 0px 0px;
+}
+
+#verticalline-icon {
+  line-height: 4;
+  position: relative;
+  left: 5px;
+}
+
+footer {
+  background-color: #43689b;
+  height: 110px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+footer img {
+  width: 85px;
+  height: 85px;
+  padding: 10px;
+}
+
+#song-details {
+  display: flex;
+}
+
+#footer-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+#songname-artist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#bottom-icons {
+  display: flex;
+  text-align: center;
+  margin-top: 55px;
+}
+
+#bottom-icons i {
+  padding: 0 50px;
+}
