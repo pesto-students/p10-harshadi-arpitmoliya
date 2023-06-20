@@ -6,18 +6,21 @@ class Node {
   }
 }
 
-class BinaryTree {
+class Tree {
   constructor(data) {
     this.root = new Node(data);
   }
 
-  insert(val) {
-    let newNode = new Node(val);
-    if (this.root === null) {
-      this.root = newNode;
-    } else {
-      this.insertNode(this.root, newNode);
+  arrayToTree(arr, i = 0) {
+    if (i >= arr.length || arr[i] === null) {
+      return null;
     }
+
+    let node = new Node(arr[i]);
+    node.left = this.arrayToTree(arr, 2 * i + 1);
+    node.right = this.arrayToTree(arr, 2 * i + 2);
+
+    return node;
   }
 
   maxDepthOfTree(root) {
@@ -32,12 +35,7 @@ class BinaryTree {
   }
 }
 
-let tree = new BinaryTree(1);
-tree.root.left = new Node(2);
-tree.root.right = new Node(3);
-tree.root.left.left = new Node(4);
-tree.root.left.left.left = new Node(5);
-tree.root.left.left.left.left = new Node(6);
-tree.root.left.left.left.left.left = new Node(7);
+let tree = new Tree();
+tree.root = tree.arrayToTree([3, 9, 20, null, null, 15, 7], 0);
 
-console.log(tree.maxDepthOfTree(tree.root)); // 7
+console.log(tree.maxDepthOfTree(tree.root)); // 4
