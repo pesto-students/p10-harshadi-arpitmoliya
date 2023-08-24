@@ -1,12 +1,13 @@
 import React, { PureComponent } from "react";
 
 class Book extends PureComponent {
-  render(props) {
+  render() {
+    const { title, author, year } = this.props;
     return (
       <div className="book">
-        <h3>{props.title}</h3>
-        <p>Author: {props.author}</p>
-        <p>Year: {props.year}</p>
+        <h3>{title}</h3>
+        <p>Author: {author}</p>
+        <p>Year: {year}</p>
       </div>
     );
   }
