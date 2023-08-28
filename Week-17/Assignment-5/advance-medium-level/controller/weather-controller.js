@@ -1,7 +1,7 @@
 const axios = require("axios");
 
-const API_KEY = "da6ca1cb976f4eee958122514232808";
-const WEATHERAPI_BASE_URL = "http://api.weatherapi.com/v1";
+// const API_KEY = "da6ca1cb976f4eee958122514232808";
+// const WEATHERAPI_BASE_URL = "http://api.weatherapi.com/v1";
 
 async function getWeatherDataOfCities(req, res) {
   try {
