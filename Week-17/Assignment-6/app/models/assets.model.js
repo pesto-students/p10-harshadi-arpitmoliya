@@ -2,7 +2,7 @@ const mysql = require("../database/db");
 
 class Asset {
   constructor(asset) {
-    this.id = id;
+    this.id = asset.id;
     this.user_id = asset.userId;
     this.type = asset.type;
     this.name = asset.name;
