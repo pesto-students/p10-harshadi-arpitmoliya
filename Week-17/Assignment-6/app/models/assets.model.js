@@ -2,77 +2,82 @@ const mysql = require("../database/db");
 
 class Asset {
   constructor(asset) {
-    this.id = asset.id;
-    this.user_id = asset.userId;
+    this.user_id = asset.user_id;
     this.type = asset.type;
     this.name = asset.name;
     this.value = asset.value;
   }
 
-  static create(assetData, callBack) {
-    const { user_id, type, name, value } = assetData;
+  static create(newAsset, result) {
+    const { user_id, type, name, value } = newAsset;
     const query =
       "INSERT INTO Assets (user_id, type, name, value) VALUES (?, ?, ?, ?)";
 
-    mysql.query(query, [user_id, type, name, value], (err, results) => {
+    mysql.query(query, [user_id, type, name, value], (err, res) => {
       if (err) {
-        return callBack(err, null);
+        result(err, null);
+        return;
       }
 
-      const newAsset = new Asset({
-        id: results.id,
-        user_id,
-        type,
-        name,
-        value,
-      });
-
-      callBack(null, newAsset);
+      result(null, { id: res.insertId, ...newAsset });
     });
   }
 
-  static findById(assetId, callBack) {
+  static findById(assetId, result) {
     const query = "SELECT * FROM Assets WHERE id = ?";
 
-    mysql.query(query, assetId, (err, results) => {
+    mysql.query(query, assetId, (err, res) => {
       if (err) {
-        return callBack(err, null);
+        result(err, null);
+        return;
       }
-      if (results.length === 0) {
-        return callBack(null, null); // Asset not found
+      if (res.length) {
+        result(null, res[0]);
+        return;
       }
 
-      const assetData = results[0];
-      const asset = new Asset(assetData);
-
-      callBack(null, asset);
+      // not found asset
+      result({ kind: "notFound" }, null);
     });
   }
 
-  update() {
+  static update(id, asset, result) {
     const query =
       "UPDATE Assets SET user_id = ?, type = ?, name = ?, value = ? WHERE id = ?";
     mysql.query(
       query,
-      [this.user_id, this.type, this.name, this.value, this.id],
-      (err, results) => {
+      [asset.user_id, asset.type, asset.name, asset.value, id],
+      (err, res) => {
         if (err) {
-          return callback(err, null);
+          result(null, err);
+          return;
         }
-        callback(null, results.affectedRows > 0);
+
+        if (res.affectedRows === 0) {
+          result({ kind: "not_found" }, null);
+          return;
+        }
+
+        result(null, { id: id, ...asset });
       }
     );
   }
 
-  static delete(assetId, callBack) {
+  static delete(assetId, result) {
     const query = "DELETE FROM Assets WHERE id = ?";
 
-    mysql.query(query, [assetId], (err, results) => {
+    mysql.query(query, [assetId], (err, res) => {
       if (err) {
-        return callback(err, null);
+        result(null, err);
+        return;
       }
 
-      callBack(null, results.affectedRows > 0);
+      if (res.affectedRows === 0) {
+        result({ kind: "not_found" }, null);
+        return;
+      }
+
+      result(null, res);
     });
   }
 }
