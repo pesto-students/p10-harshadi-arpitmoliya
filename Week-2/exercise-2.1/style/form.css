@@ -1,0 +1,76 @@
+form {
+  margin: auto 10rem;
+  padding: 1rem;
+}
+
+section > h2 {
+  text-align: center;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  padding-right: 0.5rem;
+  display: inline-block;
+}
+
+.form-control-inline {
+  display: flex;
+}
+
+.form-control-inline input {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+input,
+select {
+  width: 60%;
+  display: inline;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  font: inherit;
+  border: 1px solid rgb(222, 254, 255);
+  border-radius: 4px;
+  padding: 0.25rem;
+  color: rgb(61, 58, 58);
+}
+
+input:focus,
+select:focus {
+  border: 1px solid #4dccc6;
+}
+
+.title {
+  display: flex;
+}
+
+.inline-lable {
+  display: inline-block;
+  width: 30%;
+}
+
+input[type="submit"] {
+  background-color: #4dccc6;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 20px;
+  margin-left: 55px;
+}
+
+input[type="submit"]:hover {
+  background-color: #89d8d3;
+}
+
+@media screen and (max-width: 700px) {
+  .inline-lable,
+  input[type="submit"] {
+    width: 100%;
+  }
+
+  section {
+    padding: 20px 40px;
+  }
+}
