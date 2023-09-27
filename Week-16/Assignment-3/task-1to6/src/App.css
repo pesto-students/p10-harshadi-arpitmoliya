@@ -1,0 +1,44 @@
+/* Style for the entire application */
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* Style for the BookForm component */
+.BookForm {
+  margin-bottom: 20px;
+}
+
+/* Style for the BookList component */
+.BookList {
+  margin-top: 20px;
+  list-style: none;
+}
+
+/* Style for individual book items in the list */
+.BookItem {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Style for the delete button in BookList */
+.DeleteButton {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Style for the Show/Hide Details button in BookDetail */
+.DetailsButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
